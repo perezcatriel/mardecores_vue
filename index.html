@@ -15,10 +15,22 @@
 			const vue = Vue.createApp({
 				data() {
 					return {
-						img: "./assets/vue.jpeg",
+						counter: 0
 					};
 				},
-				template: `<img v-bind:src="img" v-bind:alt="img">`,
+				methods: {
+					increment() {
+						this.counter++
+					},
+					decrement() {
+						this.counter--
+					}
+				},
+				template: `
+				<h1>{{ counter }}</h1>
+				<button v-on:click="increment">+1</button>
+				<button v-on:click="decrement">-1</button>
+				`,
 			}).mount("#app");
 		</script>
 	</body>
