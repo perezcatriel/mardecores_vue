@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba Vue</title>
-</head>
-<body>
-    <script src="https://unpkg.com/vue@next"></script>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Prueba Vue</title>
+	</head>
+	<body>
+		<script src="https://unpkg.com/vue@next"></script>
 
-    <div id="app"></div>
-    
-    <script >
-        const vue = Vue.createApp({
-            data() {
-                return {
-                    text: "<p>Hi, Vue</p>"
-                }
-            },
-            template: `<div v-once v-html="text"></div>`
-        }).mount("#app")
-    </script>
-</body>
+		<div id="app"></div>
+
+		<script>
+			const vue = Vue.createApp({
+				data() {
+					return {
+						img: "./assets/vue.jpeg",
+					};
+				},
+				template: `<img v-bind:src="img" v-bind:alt="img">`,
+			}).mount("#app");
+		</script>
+	</body>
 </html>
