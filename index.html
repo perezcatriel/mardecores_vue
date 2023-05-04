@@ -15,23 +15,28 @@
 			const vue = Vue.createApp({
 				data() {
 					return {
-						text: "Hola Vue"
+						firstName: "Catriel",
+						lastName: "Pérez",
+						now: new Date()
 					};
 				},
-				methods: {
-					input(e) {
-						this.text = e.target.value
+				computed: {
+					fullName() {
+						return this.firstName + " " + this.lastName;
+					},
+					today() {
+						return this.now.toLocaleDateString()
 					}
 				},
+				methods: {
+					
+				},
 				template: `
-				<p>{{ text }}</p>
-				<input 
-					type="text" 
-					// v-on:input="input" 
-					@input="input"
-					// v-bind:value="text" 
-					:value="text"
-					/>
+				<div>
+					{{ fullName }}
+				</div>
+				<div>
+					{{ today }}
 				`,
 			}).mount("#app");
 		</script>
